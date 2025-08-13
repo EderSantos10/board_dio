@@ -1,5 +1,6 @@
 package br.com.dio;
 
+import br.com.dio.exception.GlobalExceptionHandler;
 import br.com.dio.persistence.migration.MigrationStrategy;
 import br.com.dio.ui.MainMenu;
 
@@ -9,6 +10,7 @@ import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
 
 
 public class Main {
+    GlobalExceptionHandler.register();
 
     public static void main(String[] args) throws SQLException {
         try(var connection = getConnection()){
